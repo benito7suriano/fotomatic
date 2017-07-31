@@ -34,6 +34,12 @@ html {
   }
 }
 
+@media only screen and (max-width: 480px) {
+  .main-content {
+    width: 100%;
+  }
+}
+
 /* Header */
 
 header {
@@ -41,6 +47,7 @@ header {
   width: 100%;
   border-bottom: solid 1px #c6c1c1;
   background-color: white;
+  z-index: 20;
 }
 
 header .content {
@@ -51,6 +58,7 @@ header .content {
 
 header .logo {
   flex: 1;
+  font-family: 'Lucida Sans Typewriter', sans-serif;
 }
 
 header nav ul {
@@ -73,12 +81,65 @@ header .icon {
   padding-left: .75rem;
 }
 
+header .tablet {
+  display: none;
+}
+
 header .mobile {
   display: none;
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 1024px) {
   header .desktop {
+    display: none;
+  }
+
+  header .mobile {
+    display: none;
+  }
+
+  header .tablet {
+    display: block;
+    width: 100%;
+  }
+
+  header .logo {
+    display: block;
+    margin-right: 18rem;
+  }
+
+  header .content {
+    display: flex;
+    align-items: center;
+    padding: 1.875rem;
+  }
+
+  header .tablet ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+
+  header .tablet li {
+    padding: 0;
+  }
+
+  header .tablet .button {
+    padding: .1875rem .5rem;
+    background-color: #9dc20b;
+    line-height: 1.6;
+    color: white;
+  }
+
+}
+
+@media only screen and (max-width: 780px) {
+  header .desktop {
+    display: none;
+  }
+
+  header .tablet {
     display: none;
   }
 
@@ -88,7 +149,7 @@ header .mobile {
   }
 
   header .content {
-    padding: .5rem 0;
+    padding: .71875rem 0;
   }
 
   header .mobile ul {
@@ -117,6 +178,10 @@ header .mobile {
   justify-content: flex-start;
   align-items: flex-start;
   height: 43.5rem;
+  background-image: url("../images/banner-landingpage.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 #sign-up-cta {
@@ -124,6 +189,8 @@ header .mobile {
   border: solid 1px #979797;
   border-radius: 4px;
   background-color: #9dc20b;
+  margin: 170px 100px;
+  font-weight: 100;
 }
 
 #sign-up-cta .content {
@@ -136,6 +203,7 @@ header .mobile {
 }
 
 #sign-up-cta h1 {
+  padding-bottom: .75rem;
   font-size: 3.125rem;
 }
 
@@ -153,15 +221,16 @@ header .mobile {
 
 #sign-up-cta .striking {
   font-family: "Rubik", sans-serif;
-  padding-bottom: .75rem;
 }
+
 
 #sign-up-cta .button {
   margin-top: 1.625rem;
+  margin-bottom: 3.5rem;
   padding: 1.25rem 7.25rem;
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 1024px) {
   #sign-up-section {
     align-items: center;
     justify-content: center;
@@ -195,7 +264,16 @@ header .mobile {
 
 @media only screen and (max-width: 450px) {
   #sign-up-section {
-    height: 20rem;
+    height: 25rem;
+    width: 100%;
+    background-position: 85%;
+  }
+
+  #sign-up-cta {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
   }
 
   #sign-up-cta h1 {
@@ -211,22 +289,33 @@ header .mobile {
 
 #features-section {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 4rem 5%;
   background-color: #f3f3f3;
 }
 
 .feature {
   flex: 1;
+  width: 40rem;
   padding: 2rem;
-  margin: 0px 1.25rem;
+  margin: 0px 1.1875rem;
   background-color: white;
 }
 
 .feature .image-container {
-  width: 90%;
+  width: 100%;
   height: 65%;
   margin: 0 auto;
+}
+
+.feature img {
+  width: 100%;
+  height: auto;
+
+}
+
+.feature .content {
+  padding-top: 40px;
 }
 
 .feature h2 {
@@ -234,12 +323,13 @@ header .mobile {
   font-size: 2.25rem;
   font-weight: bold;
   color: #4a4a4a;
+  line-height: 1.2;
 }
 
 .feature h3 {
   font-size: 1rem;
   line-height: 1.2;
-  font-weight: 300;
+  font-weight: 200;
   color: #4a4a4a;
 }
 
@@ -260,11 +350,22 @@ header .mobile {
   #features-section {
     flex-flow: column;
     padding: 0;
+    width: 100%;
   }
 
   .feature {
     margin: 0;
-    padding: 1.25rem 1rem 0 1rem;
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .center {
+    margin: 0 1rem;
+  }
+
+ .center .content {
+    padding-top: 1.125rem;
+    padding-bottom: 1.875rem;
   }
 }
 
@@ -296,7 +397,14 @@ header .mobile {
 #filters-section .images-container {
   max-width: 100%;
   padding: 0 1%;
+  display: flex;
 }
+
+#filters-section img {
+  width: 100%;
+  height: auto;
+}
+
 
 @media only screen and (max-width: 760px) {
   #filters-section {
@@ -323,6 +431,10 @@ header .mobile {
     padding: 0;
   }
 
+  #filters-section .image-container {
+    width: 33.3%;
+  }
+
   #filters-section .extra {
     display: none;
   }
@@ -334,11 +446,11 @@ header .mobile {
   background-color: #f3f3f3;
 }
 
-#quotes-section content {
+#quotes-section .content {
   padding: 5rem 0;
 }
 
-#quotes-section quote {
+#quotes-section .quote {
   padding-right: 1.875rem;
   font-family: "Palatino", serif;
   font-size: 1.875rem;
@@ -356,7 +468,7 @@ header .mobile {
     padding: 1.875rem .625rem;
   }
 
-  #quotes-section quote {
+  #quotes-section .quote {
     font-size: 1.5rem;
     line-height: 1.4;
   }
@@ -366,6 +478,10 @@ header .mobile {
     padding-top: 1rem;
     margin: auto;
   }
+}
+
+@media screen only and (max-width: 480px) {
+
 }
 
 /* Footer */
